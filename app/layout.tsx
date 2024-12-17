@@ -8,6 +8,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
+import { Head } from "next/document";
 
 export const metadata: Metadata = {
   title: {
@@ -34,7 +35,23 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <head />
+      <Head>
+        {/* Google Analytics */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=G-X28L3GS4W2`} // Reemplaza con tu ID de Google Analytics
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-X28L3GS4W2'); // Reemplaza con tu ID de Google Analytics
+            `,
+          }}
+        />
+      </Head>
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
