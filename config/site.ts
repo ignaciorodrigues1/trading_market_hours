@@ -63,6 +63,6 @@ export const siteConfig = {
     github: "https://github.com/ignaciorodrigues1/trading_market_hours",
     twitter: "https://twitter.com/ignacrodriuges",
     discord: "",
-    sponsor: "patreon.com/IgnacioRodrigues",
+    sponsor: "https://patreon.com/IgnacioRodrigues",
   },
 };
